@@ -2,6 +2,7 @@
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tokoonlinesederhana.Adapter.List_Adapter
 import com.example.tokoonlinesederhana.Model.Model_1
@@ -27,9 +28,10 @@ import com.example.tokoonlinesederhana.Model.Model_1
                 47000
             )
         )
-        val adapter : List_Adapter
-        adapter = List_Adapter(applicationContext, tampilan)
-        val r = findViewById<RecyclerView>(R.id.rc)
+
+        val adapter = List_Adapter(applicationContext, tampilan)
+        val r : RecyclerView = findViewById(R.id.rc)
+        r.layoutManager = GridLayoutManager(this, 2)
         r.adapter = adapter
 
     }
